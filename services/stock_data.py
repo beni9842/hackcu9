@@ -19,7 +19,7 @@ def get_historical_data(symbol, timeframe, start, end, limit=1000):
     data = []
     for bar in bars:
         data.append({
-            'timestamp': bar.t,
+            'timestamp': bar.t.timestamp(),
             'open': bar.o,
             'high': bar.h,
             'low': bar.l,
