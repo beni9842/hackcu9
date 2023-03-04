@@ -1,5 +1,9 @@
 import services.stock_data
 import pandas as pd
+import os
+
+os.makedirs("data/train", exist_ok=True)
+os.makedirs("data/test", exist_ok=True)
 
 symbol = 'TSLA'
 timeframe = '1min'
