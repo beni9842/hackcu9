@@ -39,7 +39,7 @@ def get_predictions(df):
     model.compile(optimizer='adam', loss='mean_squared_error')
 
     # Train model
-    model.fit(x_train, y_train, epochs=100, batch_size=32)
+    model.fit(x_train, y_train, epochs=150, batch_size=32)
 
     # Test model
     test_data = scaled_data[training_data_len - 60:, :]
@@ -64,12 +64,13 @@ def get_predictions(df):
 
 # Load data
 atvi = ('atvi', pd.read_csv('data/prices/atvi.csv').loc[:,['close']])
-bmbl = ('bmbl', pd.read_csv('data/prices/bmbl.csv').loc[:,['close']])
+f = ('f', pd.read_csv('data/prices/f.csv').loc[:,['close']])
 tsla = ('tsla', pd.read_csv('data/prices/tsla.csv').loc[:,['close']])
 
-datasets = [atvi, bmbl, tsla]
+datasets = [atvi, f, tsla]
 for dataset in datasets:
     symbol, df = dataset
+    print("creating model for {symbol}".format(symbol=symbol))
     pred, real = get_predictions(df)
 
 
