@@ -1,17 +1,16 @@
 # hackcu9
 stock trading ai project with python tensorflow
 
-## Requirements
-Create a new conda env `tf`:
-`conda create -n tf`
+## portfolio values
 
-Activate new env:
-`conda activate tf`
+dca tsla -> $11082.97
 
-Once in the env:
+pca tsla -> $12273.255473646
 
-Installing requirements from file:
-`pip install -r requirements.txt`
+dca atvi -> $9612.544999999998
 
-Adding new requirements:
-`pip freeze > requirements.txt`
+pca atvi -> $9758.460003189082
+
+dca f -> $10038.599999999999
+
+pca f -> $11148.365227197555

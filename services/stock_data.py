@@ -1,5 +1,6 @@
 import alpaca_trade_api as tradeapi
 import numpy as np
+import pandas as pd
 import os
 
 # authentication and connection details
@@ -20,11 +21,13 @@ def get_historical_data(symbol, timeframe, start, end, limit=1000):
     for bar in bars:
         data.append({
             'timestamp': bar.t.timestamp(),
-            'open': bar.o,
+            'open': bar.o, 
             'high': bar.h,
             'low': bar.l,
             'close': bar.c,
             'volume': bar.v
         })
-    return data
+    return pd.DataFrame(data)
 
+def get_prices(symbol, timeframe, start, end):
+    return get_historical_data(symbol, timeframe, start, end)['close']
